@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
+    android:background="#009DFF"
     >
 
     <TextView
@@ -17,17 +18,27 @@
         android:layout_marginTop="5dp"
         android:textSize="30dp"
         android:gravity="center"
-        android:background="#706070"
-        android:textColor="@color/white" />
-
+        android:background="#000000"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"/>
     <EditText
         android:id="@+id/przepis_EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Podaj nazwę przepisu"
-        android:layout_margin="10dp"
-    />
-
+        android:layout_margin="5dp"
+     />
+    <EditText
+        android:id="@+id/opis_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Podaj przepis"
+        android:layout_margin="5dp"
+       />
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -38,8 +49,7 @@
         android:text="Ocena Przepisu"
         android:textSize="20sp"
         android:layout_margin="10dp"/>
-
-            <RatingBar
+    <RatingBar
                 android:id="@+id/my_ratingbar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,16 +74,21 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#000000"/>
-
     <Button
         android:id="@+id/btn_editRecipe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="dodaj przepis"
+        android:text="DODAJ PRZEPIS"
         android:layout_margin="10dp"
-        android:backgroundTint="#706070"
+        android:backgroundTint="#000000"
         />
-
+    <TextView
+        android:id="@+id/przepisy_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="tu beda zapisane przepisy"
+        android:layout_margin="20dp"
+        />
 
 
 </LinearLayout>
