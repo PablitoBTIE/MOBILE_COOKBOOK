@@ -1,6 +1,8 @@
 package com.example.mobile_cookbook
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -13,6 +15,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var ratingBar: RatingBar
     private lateinit var ratingValue: TextView
 
+    lateinit var MyRecipe: EditText
+    lateinit var Recipe: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -22,12 +27,27 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        MyRecipe = findViewById(R.id.przepis_EditText)
+        Recipe = findViewById(R.id.opis_EditText)
         ratingBar = findViewById(R.id.my_ratingbar)
         ratingValue = findViewById(R.id.rating_value_textview)
 
         val sharedPreferences = getSharedPreferences("MojePreferencje", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
         val saveRatingValue = sharedPreferences.getFloat("ratingXYZ", 3.0f)
+        MyRecipe.setText(sharedPreferences.getString("myrecipe", "Brak nazwy"))
+        Recipe.setText(sharedPreferences.getString("recipe", "Brak opisu"))
+
+        val przepisy_TextView: TextView = findViewById(R.id.przepisy_TextView)
+        przepisy_TextView.text = "nazwa: ${MyRecipe.text}\nopis:${Recipe.text}"
+
+        val btn:Button = findViewById(R.id.btn_AddRecipe)
+        btn.setOnClickListener{
+            editor.putString("myrecipe", MyRecipe.text.toString())
+            editor.putString("recipe", Recipe.text.toString())
+            editor.apply()
+        }
+
 
         ratingBar.rating = saveRatingValue
         ratingValue.text = "Twoja ocena $saveRatingValue"

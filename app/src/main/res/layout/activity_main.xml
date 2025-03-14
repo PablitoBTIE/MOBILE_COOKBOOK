@@ -25,13 +25,16 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#000000"/>
+<!--nazwa przepisu-->
     <EditText
         android:id="@+id/przepis_EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Podaj nazwę przepisu"
-        android:layout_margin="5dp"
-     />
+        android:layout_margin="5dp"/>
+<!--nazwa opisu-->
+
+
     <EditText
         android:id="@+id/opis_EditText"
         android:layout_width="match_parent"
@@ -75,7 +78,7 @@
         android:layout_height="1dp"
         android:background="#000000"/>
     <Button
-        android:id="@+id/btn_editRecipe"
+        android:id="@+id/btn_AddRecipe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="DODAJ PRZEPIS"
