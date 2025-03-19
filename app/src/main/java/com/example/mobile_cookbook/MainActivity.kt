@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var MyRecipe: EditText
     lateinit var Recipe: EditText
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -37,16 +38,19 @@ class MainActivity : AppCompatActivity() {
         val saveRatingValue = sharedPreferences.getFloat("ratingXYZ", 3.0f)
         MyRecipe.setText(sharedPreferences.getString("myrecipe", "Brak nazwy"))
         Recipe.setText(sharedPreferences.getString("recipe", "Brak opisu"))
+        ratingValue.text = "Twoja ocena: $saveRatingValue"
 
         val przepisy_TextView: TextView = findViewById(R.id.przepisy_TextView)
-        przepisy_TextView.text = "nazwa: ${MyRecipe.text}\nopis:${Recipe.text}"
+        przepisy_TextView.text = "nazwa: ${MyRecipe.text}\nopis:${Recipe.text}\nocena:${saveRatingValue}"
 
         val btn:Button = findViewById(R.id.btn_AddRecipe)
         btn.setOnClickListener{
             editor.putString("myrecipe", MyRecipe.text.toString())
             editor.putString("recipe", Recipe.text.toString())
+            editor.putFloat("ratingXYZ", ratingBar.rating)
             editor.apply()
         }
+
 
 
         ratingBar.rating = saveRatingValue
