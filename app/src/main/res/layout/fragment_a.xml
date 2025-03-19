@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="#009DFF"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MOBILE COOKBOOK"
+        android:layout_marginTop="5dp"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:background="#000000"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"/>
+    <!--nazwa przepisu-->
+    <EditText
+        android:id="@+id/przepis_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Podaj nazwę przepisu"
+        android:layout_margin="5dp"/>
+    <!--nazwa opisu-->
+
+
+    <EditText
+        android:id="@+id/opis_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Podaj przepis"
+        android:layout_margin="5dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ocena Przepisu"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
+    <RatingBar
+        android:id="@+id/my_ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="6"
+        android:stepSize="0.5"
+        android:rating="3"
+        android:isIndicator="false"
+        android:layout_margin="10dp"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:progressBackgroundTint="#706070"
+        android:progressTint="#FFEB3B"
+        />
+    <TextView
+        android:id="@+id/rating_value_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Twoja ocena: 3.0"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"/>
+    <Button
+        android:id="@+id/btn_AddRecipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DODAJ PRZEPIS"
+        android:layout_margin="10dp"
+        android:backgroundTint="#000000"
+        />
+    <TextView
+        android:id="@+id/przepisy_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="tu beda zapisane przepisy"
+        android:layout_margin="20dp"
+        />
+
+
+</LinearLayout>
