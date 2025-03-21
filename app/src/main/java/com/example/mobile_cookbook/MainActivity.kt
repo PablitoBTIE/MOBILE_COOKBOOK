@@ -63,5 +63,17 @@ class MainActivity : AppCompatActivity() {
             editor.putFloat("ratingXYZ", rating)
             editor.apply()
         }
+
+//        val switchToWroc_do_activity_main_Button: Button = findViewById(R.id.idz_do_fragmentu_b)
+//        switchToWroc_do_activity_main_Button.setOnClickListener {
+//            parentFragmentManager.beginTransaction()
+//                .setCustomAnimations(
+//                    R.anim.slide_in_right,
+//                    R.anim.slide_in_left
+//                )
+//                .replace(R.id.fragment_container, Wroc_do_activity_main_Button())
+//                .addToBackStack(null)
+//                .commit()
+
     }
 }
